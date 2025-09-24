@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+                publicKey: "SkP8ukY642-kRbtwQ",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            console.log("window loaded")
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <form id="contact-form">
+                <!-- To simplify the tutorial, the value is static. -->
+
+                <label>Question 1 time</label>
+                <input id="q1-time" type="text" name="Question 1 time">
+                <label>Question 1 answer</label>
+                <input id="q1-answer" type="text" name="Question 1 answer">
+                <label>Question 2 time</label>
+                <input id="q2-time" type="text" name="Question 2 time">
+                <label>Question 2 answer</label>
+                <input id="q2-answer" type="text" name="Question 2 answer">
+                <label>Question 3 time</label>
+                <input id="q3-time" type="text" name="Question 3 time">
+                <label>Question 3 answer</label>
+                <input id="q3-answer" type="text" name="Question 3 answer">
+                <label>Question 4 time</label>
+                <input id="q4-time" type="text" name="Question 4 time">
+                <label>Question 4 answer</label>
+                <input id="q4-answer" type="text" name="Question 4 answer">
+                <label>Question 5 time</label>
+                <input id="q5-time" type="text" name="Question 5 time">
+                <label>Question 5 answer</label>
+                <input id="q5-answer" type="text" name="Question 5 answer">
+                <label>Question 6 time</label>
+                <input id="q6-time" type="text" name="Question 6 time">
+                <label>Question 6 answer</label>
+                <input id="q6-answer" type="text" name="Question 6 answer">
+                <label>Question 7 time</label>
+                <input id="q7-time" type="text" name="Question 7 time">
+                <label>Question 7 answer</label>
+                <input id="q7-answer" type="text" name="Question 7 answer">
+                <label>Question 8 time</label>
+                <input id="q8-time" type="text" name="Question 8 time">
+                <label>Question 8 answer</label>
+                <input id="q8-answer" type="text" name="Question 8 answer">
+
+                <input type="submit" value="Send">
+            </form>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="nav-heading" style="padding: 10px 0px;">
+                    hello world
+                </div>
+            </div>
+        </div>
+        <div class="row" id="answers" style="display: none;">
+            <div class="col-6">
+                <p>Typical Time</p>
+                <p><span id="typical-time"></span> seconds</p>
+            </div>
+            <div class="col-6">
+                <p>Atypical Time</p>
+                <p><span id="atypical-time"></span> seconds</p>
+            </div>
+        </div>
+        <div class="row" id="questions">
+            <div id="finished" style="display: none;">
+                <p>FINISHED!</p>
+            </div>
+            <div class="col">
+                <button id="timer-control1">Start</button>
+                <div id="q1" style="display: none;">
+                    <p>Plato Fucking rad bro</p>
+                    <button id="q1-t">True</button>
+                    <button id="q1-f">False</button>
+                </div>
+                <div id="q2" style="display: none;">
+                    <p>This is question 2</p>
+                    <button id="q2-t">True</button>
+                    <button id="q2-f">False</button>
+                </div>
+                <div id="q3" style="display: none;">
+                    <p>Question 3 baybee</p>
+                    <button id="q3-t">True</button>
+                    <button id="q3-f">False</button>
+                </div>
+                <div id="q4" style="display: none;">
+                    <p>this is 4</p>
+                    <button id="q4-t">True</button>
+                    <button id="q4-f">False</button>
+                </div>
+                <div id="q5" style="display: none;">
+                    <p>fucking 5 lets go</p>
+                    <button id="q5-t">True</button>
+                    <button id="q5-f">False</button>
+                </div>
+                <div id="q6" style="display: none;">
+                    <p>that'll be 6</p>
+                    <button id="q6-t">True</button>
+                    <button id="q6-f">False</button>
+                </div>
+                <div id="q7" style="display: none;">
+                    <p>What do you mean this is q 7?</p>
+                    <button id="q7-t">True</button>
+                    <button id="q7-f">False</button>
+                </div>
+                <div id="q8" style="display: none;">
+                    <p>last question! (8)</p>
+                    <button id="q8-t">True</button>
+                    <button id="q8-f">False</button>
+                </div>
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+        let timerControl = document.getElementById("timer-control1");
+        let q1True = document.getElementById("q1-t");
+        let q1False = document.getElementById("q1-f");
+        let q2True = document.getElementById("q2-t");
+        let q2False = document.getElementById("q2-f");
+        let q3True = document.getElementById("q3-t");
+        let q3False = document.getElementById("q3-f");
+        let q4True = document.getElementById("q4-t");
+        let q4False = document.getElementById("q4-f");
+        let q5True = document.getElementById("q5-t");
+        let q5False = document.getElementById("q5-f");
+        let q6True = document.getElementById("q6-t");
+        let q6False = document.getElementById("q6-f");
+        let q7True = document.getElementById("q7-t");
+        let q7False = document.getElementById("q7-f");
+        let q8True = document.getElementById("q8-t");
+        let q8False = document.getElementById("q8-f");
+
+
+        let qStart;
+        let qEnd;
+
+        let q1Time;
+        let q1Ans;
+
+        let q2Time;
+        let q2Ans;
+
+        let q3Time;
+        let q3Ans;
+
+        let q4Time;
+        let q4Ans;
+
+        let q5Time;
+        let q5Ans;
+
+        let q6Time;
+        let q6Ans;
+
+        let q7Time;
+        let q7Ans;
+
+        let q8Time;
+        let q8Ans;
+
+
+        let typicalTimes = [q1Time, q3Time, q5Time, q7Time];
+        let atypicalTimes = [q2Time, q4Time, q6Time, q8Time];
+        let answers = [
+            q1Ans, q2Ans, q3Ans, q4Ans, q5Ans, q6Ans, q7Ans, q8Ans
+        ];
+        let finalTypical;
+        let finalAtypical;
+        // log questions taken here to avoid duplicates, once length if array is 8, conclude
+        let dupeChecker = [];
+        var lastQ = "";
+
+        function roll() {
+            let diceRoll = (
+                Math.round(
+                    (Math.floor(Math.random() * 11)) / 100 * 70
+                ) + 1);
+            return diceRoll;
+        };
+
+        function getRandomInt() {
+            if (dupeChecker.length > 7) {
+                d8 = 10;
+                return d8;
+            } else {
+                if (dupeChecker.length < 1) {
+                    let d8 = roll();
+                    // console.log(d8);
+                    if (dupeChecker.includes(d8)) {
+                        // console.log("duplicate in array (", d8, ")");
+                        // console.log("dupeChecker on TRUE: ", dupeChecker);
+                        return getRandomInt();
+                    } else {
+                        // console.log("first instance of", d8);
+                        // console.log("pushing d8 to dupeChecker...");
+                        dupeChecker.push(d8);
+                        // console.log("dupeChecker: ", dupeChecker);
+                        lastQ = "q" + d8;
+                    }
+                    return d8;
+                } else {
+                    document.getElementById(lastQ).style.display = "none";
+                    let d8 = roll();
+                    // console.log(d8);
+                    if (dupeChecker.includes(d8)) {
+                        // console.log("duplicate in array (", d8, ")");
+                        // console.log("dupeChecker on TRUE: ", dupeChecker);
+                        return getRandomInt();
+                    } else {
+                        // console.log("first instance of", d8);
+                        // console.log("pushing d8 to dupeChecker...");
+                        dupeChecker.push(d8);
+                        // console.log("dupeChecker: ", dupeChecker);
+                        lastQ = "q" + d8;
+                    }
+                    return d8;
+                }
+            }
+        };
+
+        function genQuestion() {
+            console.log("CLICK");
+            let q = getRandomInt();
+            if (q === 10) {
+                document.getElementById("finished").style.display = "block";
+                document.getElementById("timer-control1").style.display = "none";
+                document.getElementById("questions").style.display = "none";
+                finalTypical = q1Time + q3Time + q5Time + q7Time;
+                finalAtypical = q2Time + q4Time + q6Time + q8Time;
+                document.getElementById("typical-time").innerHTML = finalTypical;
+                document.getElementById("atypical-time").innerHTML = finalAtypical;
+                document.getElementById("answers").style.display = "block";
+                return;
+            } else {
+                let qSelect = "q" + q;
+                timerControl.innerHTML = "Stop";
+                console.log(qStart);
+                console.log("qSelect: ", qSelect);
+                document.getElementById(qSelect).style.display = "block";
+                qStart = Date.now();
+            }
+        };
+
+        function question1(answer) {
+            qEnd = Date.now();
+            q1Time = (qEnd - qStart) / 1000;
+            q1Ans = answer;
+            document.getElementById("q1-time").value = q1Time;
+            document.getElementById("q1-answer").value = q1Ans;
+            genQuestion();
+        };
+
+        function question2(answer) {
+            qEnd = Date.now();
+            q2Time = (qEnd - qStart) / 1000;
+            q2Ans = answer;
+            document.getElementById("q2-time").value = q2Time;
+            document.getElementById("q2-answer").value = q2Ans;
+            genQuestion();
+        };
+
+        function question3(answer) {
+            qEnd = Date.now();
+            q3Time = (qEnd - qStart) / 1000;
+            q3Ans = answer;
+            document.getElementById("q3-time").value = q3Time;
+            document.getElementById("q3-answer").value = q3Ans;
+            genQuestion();
+        };
+
+        function question4(answer) {
+            qEnd = Date.now();
+            q4Time = (qEnd - qStart) / 1000;
+            q4Ans = answer;
+            document.getElementById("q4-time").value = q4Time;
+            document.getElementById("q4-answer").value = q4Ans;
+            genQuestion();
+        };
+
+        function question5(answer) {
+            qEnd = Date.now();
+            q5Time = (qEnd - qStart) / 1000;
+            q5Ans = answer;
+            document.getElementById("q5-time").value = q5Time;
+            document.getElementById("q5-answer").value = q5Ans;
+            genQuestion();
+        };
+
+        function question6(answer) {
+            qEnd = Date.now();
+            q6Time = (qEnd - qStart) / 1000;
+            q6Ans = answer;
+            document.getElementById("q6-time").value = q6Time;
+            document.getElementById("q6-answer").value = q6Ans;
+            genQuestion();
+        };
+
+        function question7(answer) {
+            qEnd = Date.now();
+            q7Time = (qEnd - qStart) / 1000;
+            q7Ans = answer;
+            document.getElementById("q7-time").value = q7Time;
+            document.getElementById("q7-answer").value = q7Ans;
+            genQuestion();
+        };
+
+        function question8(answer) {
+            qEnd = Date.now();
+            q8Time = (qEnd - qStart) / 1000;
+            q8Ans = answer;
+            document.getElementById("q8-time").value = q8Time;
+            document.getElementById("q8-answer").value = q8Ans;
+            genQuestion();
+        };
+
+        timerControl.addEventListener('click', genQuestion);
+        q1True.addEventListener('click', function() {
+            question1("true")
+        });
+        q1False.addEventListener('click', function() {
+            question1("false")
+        });
+        q2True.addEventListener('click', function() {
+            question2("true")
+        });
+        q2False.addEventListener('click', function() {
+            question2("false")
+        });
+        q3True.addEventListener('click', function() {
+            question3("true")
+        });
+        q3False.addEventListener('click', function() {
+            question3("false")
+        });
+        q4True.addEventListener('click', function() {
+            question4("true")
+        });
+        q4False.addEventListener('click', function() {
+            question4("false")
+        });
+        q5True.addEventListener('click', function() {
+            question5("true")
+        });
+        q5False.addEventListener('click', function() {
+            question5("false")
+        });
+        q6True.addEventListener('click', function() {
+            question6("true")
+        });
+        q6False.addEventListener('click', function() {
+            question6("false")
+        });
+        q7True.addEventListener('click', function() {
+            question7("true")
+        });
+        q7False.addEventListener('click', function() {
+            question7("false")
+        });
+        q8True.addEventListener('click', function() {
+            question8("true")
+        });
+        q8False.addEventListener('click', function() {
+            question8("false")
+        });
+    </script>
+
+</body>
+
+</html>
