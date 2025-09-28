@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Webpage</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function() {
+        (function () {
             // https://dashboard.emailjs.com/admin/account
             emailjs.init({
                 publicKey: "SkP8ukY642-kRbtwQ",
@@ -17,9 +20,9 @@
         })();
     </script>
     <script type="text/javascript">
-        window.onload = function() {
+        window.onload = function () {
             console.log("window loaded")
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
                 event.preventDefault();
                 // these IDs from the previous steps
                 emailjs.sendForm('contact_service', 'contact_form', this)
@@ -31,17 +34,117 @@
             });
         }
     </script>
-</head>
-<style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Honk&display=swap');
 
-</style>
+        * {
+            font-size: 1.1rem;
+        }
+        
+        body {
+            background-image: url('https://res.cloudinary.com/dmjetjfza/image/upload/v1758990493/think-fast-bg_nk3j1f.webp');
+            background-size: auto 100% !important;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .nav-heading {
+            font-family: 'Honk', cursive;
+            font-size: 3rem;
+            /* background-image: linear-gradient(pink, red);
+            color: transparent;
+            background-clip: text; */
+            text-align: center
+        }
+
+        #intro {
+            transition: all 0.5s ease;
+        }
+
+        .row-b{
+            --bs-gutter-x: 0rem;
+        }
+
+        
+
+        .box {
+            padding: 5% 10%;
+            background-color: #1a1c25;
+            color: #d8d9f3;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .qbox {
+            min-height: 50vh;
+            height: fit-content;
+        }
+
+        .box p {
+            color: #d8d9f3;
+            text-align: center;
+        }
+
+        .tf-row {
+            height: 100%;
+        }
+
+        .tf-col {
+            height: 80%;
+        }
+
+        .tf-btn {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            align-content: revert-layer;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tf-btn p {
+            font-size: 3rem;
+        }
+
+        .question-container {
+            height: 50vh;
+        }
+
+        .on-ur-marks {
+            font-family: 'Honk', cursive;
+            font-size: 10rem;
+            text-align: center;
+            /* background-image: linear-gradient(pink, red);
+            color: transparent;
+            background-clip: text; */
+            display: none;
+        }
+
+        #score {
+            font-family: 'Honk', cursive;
+            text-align: center;
+            background-image: linear-gradient(pink, red);
+            color: transparent;
+            background-clip: text
+        }
+
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+    </style>
+</head>
 
 <body>
 
     </div>
     <div class="container">
         <div class="row">
-            <form id="contact-form">
+            <form id="contact-form" style="display: none;">
                 <!-- To simplify the tutorial, the value is static. -->
 
                 <label>Question 1 time</label>
@@ -76,81 +179,271 @@
                 <input id="q8-time" type="text" name="Question 8 time">
                 <label>Question 8 answer</label>
                 <input id="q8-answer" type="text" name="Question 8 answer">
+                <label>Question 9 time</label>
+                <input id="q9-time" type="text" name="Question 9 time">
+                <label>Question 9 answer</label>
+                <input id="q9-answer" type="text" name="Question 9 answer">
+                <label>Question 10 time</label>
+                <input id="q10-time" type="text" name="Question 10 time">
+                <label>Question 10 answer</label>
+                <input id="q10-answer" type="text" name="Question 10 answer">
+                <label>Typical Time</label>
+                <input id="typical" type="text" name="typical time">
+                <label>Atypical Time</label>
+                <input id="atypical" type="text" name="atypical time">
+                <label>Final Time</label>
+                <input id="final-time" type="text" name="final time">
+                <label>average typical time</label>
+                <input id="avg-typical" type="text" name="average typical time">
+                <label>average atypical time</label>
+                <input id="avg-atypical" type="text" name="average atypical time">
 
                 <input type="submit" value="Send">
             </form>
         </div>
+    </div>
+    <div class="container">
         <div class="row">
             <div class="col">
                 <div class="nav-heading" style="padding: 10px 0px;">
-                    hello world
+                    Think Fast
                 </div>
             </div>
         </div>
-        <div class="row" id="answers" style="display: none;">
-            <div class="col-6">
+            <div class="row" id="intro" style="display: none;">
+                <div class="col box">
+                    <p style="font-size: 1.2rem;">How <strong>FAST</strong> can you guess the correct answer to these true
+                        or false questions?</p>
+                    <p style="font-size: 1.2rem;">Person with the shortest time gets a PRIZE.</p>
+                    <p style="font-size: 1.2rem;"><strong>Be careful</strong> though, as each wrong answer will give you a 2
+                        second penalty!</p>
+                    <br>
+                    <p><span class="btn btn-outline-light" id="timer-control1"
+                            style="font-size: 2rem; padding: 20px;">Start</span></p>
+                </div>
+            </div>
+        <div class="row" id="countdown" style="display: none;">
+            <div class="col box" style="height: 50vh">
+                <h1 class="on-ur-marks" id="3">3</h1>
+                <h1 class="on-ur-marks" id="2">2</h1>
+                <h1 class="on-ur-marks" id="1">1</h1>
+            </div>
+        </div>
+        </div>
+        <div class="row box row-b" id="answers" style="display: none;">
+            <div class="col-12">
+                <h3 style="color: #ffffff;">Your Score!</h3>
+                <h2 style="color: #ffffff;" id="score">seconds</h2>
+                <p style="color: #ffffff;"><strong>Your time has been emailed to Andy, who will collate the results and tell you the winner soon!</strong></span></p>
+            </div>
+            <!-- <div class="col-6">
                 <p>Typical Time</p>
                 <p><span id="typical-time"></span> seconds</p>
             </div>
             <div class="col-6">
                 <p>Atypical Time</p>
                 <p><span id="atypical-time"></span> seconds</p>
-            </div>
+            </div> -->
         </div>
-        <div class="row" id="questions">
+        <div class="row row-b" id="questions" style="display: none;">
             <div id="finished" style="display: none;">
                 <p>FINISHED!</p>
             </div>
-            <div class="col">
-                <button id="timer-control1">Start</button>
-                <div id="q1" style="display: none;">
-                    <p>Plato Fucking rad bro</p>
-                    <button id="q1-t">True</button>
-                    <button id="q1-f">False</button>
-                </div>
-                <div id="q2" style="display: none;">
-                    <p>This is question 2</p>
-                    <button id="q2-t">True</button>
-                    <button id="q2-f">False</button>
-                </div>
-                <div id="q3" style="display: none;">
-                    <p>Question 3 baybee</p>
-                    <button id="q3-t">True</button>
-                    <button id="q3-f">False</button>
-                </div>
-                <div id="q4" style="display: none;">
-                    <p>this is 4</p>
-                    <button id="q4-t">True</button>
-                    <button id="q4-f">False</button>
-                </div>
-                <div id="q5" style="display: none;">
-                    <p>fucking 5 lets go</p>
-                    <button id="q5-t">True</button>
-                    <button id="q5-f">False</button>
-                </div>
-                <div id="q6" style="display: none;">
-                    <p>that'll be 6</p>
-                    <button id="q6-t">True</button>
-                    <button id="q6-f">False</button>
-                </div>
-                <div id="q7" style="display: none;">
-                    <p>What do you mean this is q 7?</p>
-                    <button id="q7-t">True</button>
-                    <button id="q7-f">False</button>
-                </div>
-                <div id="q8" style="display: none;">
-                    <p>last question! (8)</p>
-                    <button id="q8-t">True</button>
-                    <button id="q8-f">False</button>
+            <div class="col box qbox">
+
+                <div class="container-fluid question-container" id="q1" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>A daffodil is a plant</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q1-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q1-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+                <div class="container-fluid question-container" id="q2" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Broccoli is a plant</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q2-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q2-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="container-fluid question-container" id="q3" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Chicken strips fried in batter are chicken tenders</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q3-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q3-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                </form>
+                <div class="container-fluid question-container" id="q4" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>People who tend to chickens are chicken tenders</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q4-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q4-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q5" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>A goldfish is a fish</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q5-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q5-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q6" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>An eel is a fish</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q6-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q6-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q7" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Rats are vermmin</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q7-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q7-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q8" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Rabbits are vermmin</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q8-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q8-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q9" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Milk is a drink</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q9-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q9-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q10" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>yoghurt is a drink</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q10-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q10-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
+    <!-- styling js -->
+    <script type="text/javascript">
+        window.onLoad = setTimeout(function () {
+                document.getElementById("intro").style.display = "block";
+                document.getElementById("intro").style.animation = "fade-in 1s ease-in-out"
+            }, 1000)
+
+        
+    </script>
     <!-- Javascript -->
     <script type="text/javascript">
         let timerControl = document.getElementById("timer-control1");
@@ -170,6 +463,10 @@
         let q7False = document.getElementById("q7-f");
         let q8True = document.getElementById("q8-t");
         let q8False = document.getElementById("q8-f");
+        let q9True = document.getElementById("q9-t");
+        let q9False = document.getElementById("q9-f");
+        let q10True = document.getElementById("q10-t");
+        let q10False = document.getElementById("q10-f");
 
 
         let qStart;
@@ -199,34 +496,42 @@
         let q8Time;
         let q8Ans;
 
+        let q9Time;
+        let q9Ans;
 
-        let typicalTimes = [q1Time, q3Time, q5Time, q7Time];
-        let atypicalTimes = [q2Time, q4Time, q6Time, q8Time];
+        let q10Time;
+        let q10Ans;
+
+        let typicalTimes = [q1Time, q3Time, q5Time, q7Time, q9Time];
+        let atypicalTimes = [q2Time, q4Time, q6Time, q8Time, q10Time];
         let answers = [
-            q1Ans, q2Ans, q3Ans, q4Ans, q5Ans, q6Ans, q7Ans, q8Ans
+            q1Ans, q2Ans, q3Ans, q4Ans, q5Ans, q6Ans, q7Ans, q8Ans, q9Ans, q10Ans
         ];
         let finalTypical;
         let finalAtypical;
+        let finalAnswers;
+        let avgTypical;
+        let avgAtypical;
         // log questions taken here to avoid duplicates, once length if array is 8, conclude
         let dupeChecker = [];
         var lastQ = "";
 
         function roll() {
             let diceRoll = (
-                Math.round(
-                    (Math.floor(Math.random() * 11)) / 100 * 70
-                ) + 1);
+                Math.floor(Math.random() * 10 + 1));
             return diceRoll;
         };
 
         function getRandomInt() {
-            if (dupeChecker.length > 7) {
-                d8 = 10;
+            if (dupeChecker.length > 9) {
+                d8 = 20;
                 return d8;
             } else {
                 if (dupeChecker.length < 1) {
                     let d8 = roll();
-                    // console.log(d8);
+                    console.log(d8);
+                    document.getElementById("intro").style.display = "none";
+                    document.getElementById("questions").style.display = "block";
                     if (dupeChecker.includes(d8)) {
                         // console.log("duplicate in array (", d8, ")");
                         // console.log("dupeChecker on TRUE: ", dupeChecker);
@@ -242,7 +547,7 @@
                 } else {
                     document.getElementById(lastQ).style.display = "none";
                     let d8 = roll();
-                    // console.log(d8);
+                    console.log(d8);
                     if (dupeChecker.includes(d8)) {
                         // console.log("duplicate in array (", d8, ")");
                         // console.log("dupeChecker on TRUE: ", dupeChecker);
@@ -261,25 +566,81 @@
 
         function genQuestion() {
             console.log("CLICK");
-            let q = getRandomInt();
-            if (q === 10) {
-                document.getElementById("finished").style.display = "block";
-                document.getElementById("timer-control1").style.display = "none";
-                document.getElementById("questions").style.display = "none";
-                finalTypical = q1Time + q3Time + q5Time + q7Time;
-                finalAtypical = q2Time + q4Time + q6Time + q8Time;
-                document.getElementById("typical-time").innerHTML = finalTypical;
-                document.getElementById("atypical-time").innerHTML = finalAtypical;
-                document.getElementById("answers").style.display = "block";
-                return;
+            if (dupeChecker.length < 1) {
+                console.log("first question");
+                document.getElementById("intro").style.display = "none";
+                document.getElementById("countdown").style.display = "block";
+                document.getElementById("countdown").style.animation = "fade-in 0.5s ease-in-out";
+                setTimeout(function () {
+                    document.getElementById("3").style.display = "block";
+                    document.getElementById("3").style.animation = "fade-in 0.5s ease-in-out";
+                    setTimeout(function () {
+                        document.getElementById("3").style.display = "none";
+                        document.getElementById("2").style.display = "block";
+                        document.getElementById("2").style.animation = "fade-in 0.5s ease-in-out";
+                        setTimeout(function () {
+                            document.getElementById("2").style.display = "none";
+                            document.getElementById("1").style.display = "block";
+                            document.getElementById("1").style.animation = "fade-in 0.5s ease-in-out";
+                            setTimeout(function () {
+                                document.getElementById("countdown").style.display = "none";
+                                let q = getRandomInt();
+                                if (q === 20) {
+                                    document.getElementById("finished").style.display = "block";
+                                    document.getElementById("timer-control1").style.display = "none";
+                                    document.getElementById("questions").style.display = "none";
+                                    finalTypical = q1Time + q3Time + q5Time + q7Time + q9Time;
+                                    finalAtypical = q2Time + q4Time + q6Time + q8Time + q10Time;
+                                    document.getElementById("typical-time").innerHTML = finalTypical;
+                                    document.getElementById("atypical-time").innerHTML = finalAtypical;
+                                    document.getElementById("answers").style.display = "block";
+                                    // document.getElementById("contact-form").style.display = "block";
+                                    return;
+                                } else {
+                                    let qSelect = "q" + q;
+                                    timerControl.innerHTML = "Stop";
+                                    console.log(qStart);
+                                    console.log("qSelect: ", qSelect);
+                                    document.getElementById(qSelect).style.display = "block";
+                                    qStart = Date.now();
+                                }
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
             } else {
-                let qSelect = "q" + q;
-                timerControl.innerHTML = "Stop";
-                console.log(qStart);
-                console.log("qSelect: ", qSelect);
-                document.getElementById(qSelect).style.display = "block";
-                qStart = Date.now();
+                let q = getRandomInt();
+                if (q === 20) {
+                    document.getElementById("finished").style.display = "block";
+                    document.getElementById("timer-control1").style.display = "none";
+                    document.getElementById("questions").style.display = "none";
+                    finalTypical = q1Time + q3Time + q5Time + q7Time + q9Time;
+                    finalAtypical = q2Time + q4Time + q6Time + q8Time + q10Time;
+                    finalAnswers = q1Time + q3Time + q5Time + q7Time + q9Time + q2Time + q4Time + q6Time + q8Time + q10Time;
+                    console.log(finalAnswers);
+                    avgTypical = (q1Time + q3Time + q5Time + q7Time + q9Time) / 5;
+                    avgAtypical = (q2Time + q4Time + q6Time + q8Time + q10Time) / 5;
+                    // document.getElementById("typical-time").innerHTML = finalTypical;
+                    // document.getElementById("atypical-time").innerHTML = finalAtypical;
+                    document.getElementById("score").innerText = finalAnswers + " Seconds";
+                    document.getElementById("final-time").value = finalAnswers;
+                    document.getElementById("typical").value = finalTypical;
+                    document.getElementById("atypical").value = finalAtypical;
+                    document.getElementById("avg-typical").value = avgTypical;
+                    document.getElementById("avg-atypical").value = avgAtypical;
+                    document.getElementById("answers").style.display = "block";
+                    // document.getElementById("contact-form").style.display = "block";
+                    return;
+                } else {
+                    let qSelect = "q" + q;
+                    timerControl.innerHTML = "Stop";
+                    console.log(qStart);
+                    console.log("qSelect: ", qSelect);
+                    document.getElementById(qSelect).style.display = "block";
+                    qStart = Date.now();
+                }
             }
+            
         };
 
         function question1(answer) {
@@ -354,55 +715,45 @@
             genQuestion();
         };
 
+        function question9(answer) {
+            qEnd = Date.now();
+            q9Time = (qEnd - qStart) / 1000;
+            q9Ans = answer;
+            document.getElementById("q9-time").value = q9Time;
+            document.getElementById("q9-answer").value = q9Ans;
+            genQuestion();
+        };
+
+        function question10(answer) {
+            qEnd = Date.now();
+            q10Time = (qEnd - qStart) / 1000;
+            q10Ans = answer;
+            document.getElementById("q10-time").value = q10Time;
+            document.getElementById("q10-answer").value = q10Ans;
+            genQuestion();
+        };
+
         timerControl.addEventListener('click', genQuestion);
-        q1True.addEventListener('click', function() {
-            question1("true")
-        });
-        q1False.addEventListener('click', function() {
-            question1("false")
-        });
-        q2True.addEventListener('click', function() {
-            question2("true")
-        });
-        q2False.addEventListener('click', function() {
-            question2("false")
-        });
-        q3True.addEventListener('click', function() {
-            question3("true")
-        });
-        q3False.addEventListener('click', function() {
-            question3("false")
-        });
-        q4True.addEventListener('click', function() {
-            question4("true")
-        });
-        q4False.addEventListener('click', function() {
-            question4("false")
-        });
-        q5True.addEventListener('click', function() {
-            question5("true")
-        });
-        q5False.addEventListener('click', function() {
-            question5("false")
-        });
-        q6True.addEventListener('click', function() {
-            question6("true")
-        });
-        q6False.addEventListener('click', function() {
-            question6("false")
-        });
-        q7True.addEventListener('click', function() {
-            question7("true")
-        });
-        q7False.addEventListener('click', function() {
-            question7("false")
-        });
-        q8True.addEventListener('click', function() {
-            question8("true")
-        });
-        q8False.addEventListener('click', function() {
-            question8("false")
-        });
+        q1True.addEventListener('click', function () { question1("true") });
+        q1False.addEventListener('click', function () { question1("false") });
+        q2True.addEventListener('click', function () { question2("true") });
+        q2False.addEventListener('click', function () { question2("false") });
+        q3True.addEventListener('click', function () { question3("true") });
+        q3False.addEventListener('click', function () { question3("false") });
+        q4True.addEventListener('click', function () { question4("true") });
+        q4False.addEventListener('click', function () { question4("false") });
+        q5True.addEventListener('click', function () { question5("true") });
+        q5False.addEventListener('click', function () { question5("false") });
+        q6True.addEventListener('click', function () { question6("true") });
+        q6False.addEventListener('click', function () { question6("false") });
+        q7True.addEventListener('click', function () { question7("true") });
+        q7False.addEventListener('click', function () { question7("false") });
+        q8True.addEventListener('click', function () { question8("true") });
+        q8False.addEventListener('click', function () { question8("false") });
+        q9True.addEventListener('click', function () { question9("true") });
+        q9False.addEventListener('click', function () { question9("false") });
+        q10True.addEventListener('click', function () { question10("true") });
+        q10False.addEventListener('click', function () { question10("false") });
     </script>
 
 </body>
