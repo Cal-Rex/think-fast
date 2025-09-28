@@ -197,6 +197,8 @@
                 <input id="avg-typical" type="text" name="average typical time">
                 <label>average atypical time</label>
                 <input id="avg-atypical" type="text" name="average atypical time">
+                <label>Nickname</label>
+                <input type="text" name="nickname" id="nickname">
 
                 <input type="submit" value="Send">
             </form>
@@ -218,6 +220,12 @@
                     <p style="font-size: 1.2rem;"><strong>Be careful</strong> though, as each wrong answer will give you a 2
                         second penalty!</p>
                     <br>
+
+                    <p>Enter a nickname to get started:</p>
+                    <form>
+                        <label style="display: none;">Nickname</label>
+                        <input type="text"  id="nickname-entry">
+                    </form>
                     <p><span class="btn btn-outline-light" id="timer-control1"
                             style="font-size: 2rem; padding: 20px;">Start</span></p>
                 </div>
@@ -232,18 +240,21 @@
         </div>
         <div class="row box row-b" id="answers" style="display: none;">
             <div class="col-12">
+                <h3 style="color: #ffffff; font-family: Honk;" id="nicky-name"></h3>
                 <h3 style="color: #ffffff;">Your Score!</h3>
                 <h2 style="color: #ffffff;" id="score">seconds</h2>
                 <p style="color: #ffffff;"><strong>Your time has been emailed to Andy, who will collate the results and tell you the winner soon!</strong></span></p>
             </div>
-            <!-- <div class="col-6">
+            <!-- comment out these final divs in production -->
+            <div class="col-6">
                 <p>Typical Time</p>
                 <p><span id="typical-time"></span> seconds</p>
             </div>
             <div class="col-6">
                 <p>Atypical Time</p>
                 <p><span id="atypical-time"></span> seconds</p>
-            </div> -->
+            </div>
+            <!-- comment out these final divs in production -->
         </div>
         <div class="row row-b" id="questions" style="display: none;">
             <div id="finished" style="display: none;">
@@ -467,6 +478,7 @@
         let q9False = document.getElementById("q9-f");
         let q10True = document.getElementById("q10-t");
         let q10False = document.getElementById("q10-f");
+        let nicknameEntry = document.getElementById("nickname-entry").value;
 
 
         let qStart;
@@ -502,6 +514,7 @@
         let q10Time;
         let q10Ans;
 
+        let nickname
         let typicalTimes = [q1Time, q3Time, q5Time, q7Time, q9Time];
         let atypicalTimes = [q2Time, q4Time, q6Time, q8Time, q10Time];
         let answers = [
@@ -620,8 +633,11 @@
                     console.log(finalAnswers);
                     avgTypical = (q1Time + q3Time + q5Time + q7Time + q9Time) / 5;
                     avgAtypical = (q2Time + q4Time + q6Time + q8Time + q10Time) / 5;
-                    // document.getElementById("typical-time").innerHTML = finalTypical;
-                    // document.getElementById("atypical-time").innerHTML = finalAtypical;
+                    // Comment out in production
+                    document.getElementById("typical-time").innerHTML = finalTypical;
+                    document.getElementById("atypical-time").innerHTML = finalAtypical;
+                    // Comment out in production
+                    document.getElementById("nicky-name").innerText = nickname;
                     document.getElementById("score").innerText = finalAnswers + " Seconds";
                     document.getElementById("final-time").value = finalAnswers;
                     document.getElementById("typical").value = finalTypical;
@@ -733,7 +749,17 @@
             genQuestion();
         };
 
-        timerControl.addEventListener('click', genQuestion);
+        timerControl.addEventListener('click', function () {
+            let nicky = document.getElementById("nickname-entry").value;
+            if (nicky.length < 1) {
+                alert("Please enter a nickname to get started!");
+            } else {
+                document.getElementById("nickname").value = nicky;
+                nickname = nicky;
+                console.log(document.getElementById("nickname").value);
+                genQuestion();
+            } 
+        });
         q1True.addEventListener('click', function () { question1("true") });
         q1False.addEventListener('click', function () { question1("false") });
         q2True.addEventListener('click', function () { question2("true") });
