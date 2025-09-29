@@ -19,21 +19,7 @@
             });
         })();
     </script>
-    <script type="text/javascript">
-        window.onload = function () {
-            console.log("window loaded")
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(() => {
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Honk&display=swap');
 
@@ -280,57 +266,57 @@
                 <!-- To simplify the tutorial, the value is static. -->
 
                 <label>Question 1 time</label>
-                <input id="q1-time" type="text" name="Question 1 time">
+                <input id="q1-time" type="text" name="question1_time">
                 <label>Question 1 answer</label>
-                <input id="q1-answer" type="text" name="Question 1 answer">
+                <input id="q1-answer" type="text" name="question1_ans">
                 <label>Question 2 time</label>
-                <input id="q2-time" type="text" name="Question 2 time">
+                <input id="q2-time" type="text" name="question2_time">
                 <label>Question 2 answer</label>
-                <input id="q2-answer" type="text" name="Question 2 answer">
+                <input id="q2-answer" type="text" name="question2_ans">
                 <label>Question 3 time</label>
-                <input id="q3-time" type="text" name="Question 3 time">
+                <input id="q3-time" type="text" name="question3_time">
                 <label>Question 3 answer</label>
-                <input id="q3-answer" type="text" name="Question 3 answer">
+                <input id="q3-answer" type="text" name="question3_ans">
                 <label>Question 4 time</label>
-                <input id="q4-time" type="text" name="Question 4 time">
+                <input id="q4-time" type="text" name="question4_time">
                 <label>Question 4 answer</label>
-                <input id="q4-answer" type="text" name="Question 4 answer">
+                <input id="q4-answer" type="text" name="question4_ans">
                 <label>Question 5 time</label>
-                <input id="q5-time" type="text" name="Question 5 time">
+                <input id="q5-time" type="text" name="question5_time">
                 <label>Question 5 answer</label>
-                <input id="q5-answer" type="text" name="Question 5 answer">
+                <input id="q5-answer" type="text" name="question5_ans">
                 <label>Question 6 time</label>
-                <input id="q6-time" type="text" name="Question 6 time">
+                <input id="q6-time" type="text" name="question6_time">
                 <label>Question 6 answer</label>
-                <input id="q6-answer" type="text" name="Question 6 answer">
+                <input id="q6-answer" type="text" name="question6_ans">
                 <label>Question 7 time</label>
-                <input id="q7-time" type="text" name="Question 7 time">
+                <input id="q7-time" type="text" name="question7_time">
                 <label>Question 7 answer</label>
-                <input id="q7-answer" type="text" name="Question 7 answer">
+                <input id="q7-answer" type="text" name="question7_ans">
                 <label>Question 8 time</label>
-                <input id="q8-time" type="text" name="Question 8 time">
+                <input id="q8-time" type="text" name="question8_time">
                 <label>Question 8 answer</label>
-                <input id="q8-answer" type="text" name="Question 8 answer">
+                <input id="q8-answer" type="text" name="question8_ans">
                 <label>Question 9 time</label>
-                <input id="q9-time" type="text" name="Question 9 time">
+                <input id="q9-time" type="text" name="question9_time">
                 <label>Question 9 answer</label>
-                <input id="q9-answer" type="text" name="Question 9 answer">
+                <input id="q9-answer" type="text" name="question9_ans">
                 <label>Question 10 time</label>
-                <input id="q10-time" type="text" name="Question 10 time">
+                <input id="q10-time" type="text" name="question10_time">
                 <label>Question 10 answer</label>
-                <input id="q10-answer" type="text" name="Question 10 answer">
+                <input id="q10-answer" type="text" name="question10_ans">
                 <label>Typical Time</label>
-                <input id="typical" type="text" name="typical time">
+                <input id="typical" type="text" name="typical_time">
                 <label>Atypical Time</label>
-                <input id="atypical" type="text" name="atypical time">
+                <input id="atypical" type="text" name="atypical_time">
                 <label>Final Time</label>
-                <input id="final-time" type="text" name="final time">
+                <input id="final-time" type="text" name="final_time">
                 <label>average typical time</label>
-                <input id="avg-typical" type="text" name="average typical time">
+                <input id="avg-typical" type="text" name="avg_typical_time">
                 <label>average atypical time</label>
-                <input id="avg-atypical" type="text" name="average atypical time">
+                <input id="avg-atypical" type="text" name="avg_atypical_time">
                 <label>Nickname</label>
-                <input type="text" name="nickname" id="nickname">
+                <input type="text" name="signature" id="nickname">
 
                 <input type="submit" value="Send">
             </form>
@@ -648,7 +634,7 @@
         let q10Time;
         let q10Ans;
 
-        let nickname
+        let nickname;
         let typicalTimes = [q1Time, q3Time, q5Time, q7Time, q9Time];
         let atypicalTimes = [q2Time, q4Time, q6Time, q8Time, q10Time];
         let answers = [
@@ -664,8 +650,7 @@
         var lastQ = "";
 
         function roll() {
-            let diceRoll = (
-                Math.floor(Math.random() * 10 + 1));
+            let diceRoll = Math.floor(Math.random() * 10) + 1;
             return diceRoll;
         };
 
@@ -711,6 +696,16 @@
             }
         };
 
+        function sendForm() {
+            let contactForm = document.getElementById("contact-form");
+                emailjs.sendForm('contact_service', 'contact_form', contactForm)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+        };
+        
         function genQuestion() {
             console.log("CLICK");
             if (dupeChecker.length < 1) {
@@ -741,6 +736,7 @@
                                     document.getElementById("typical-time").innerHTML = finalTypical;
                                     document.getElementById("atypical-time").innerHTML = finalAtypical;
                                     document.getElementById("answers").style.display = "block";
+                                    // sendForm();
                                     // document.getElementById("contact-form").style.display = "block";
                                     return;
                                 } else {
@@ -779,6 +775,7 @@
                     document.getElementById("avg-typical").value = avgTypical;
                     document.getElementById("avg-atypical").value = avgAtypical;
                     document.getElementById("answers").style.display = "block";
+                    // sendForm();
                     // document.getElementById("contact-form").style.display = "block";
                     return;
                 } else {
