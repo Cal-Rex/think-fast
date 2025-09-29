@@ -552,7 +552,7 @@
                 <div class="container-fluid question-container" id="q9" style="display: none;">
                     <div class="row tf-row">
                         <div class="col-12">
-                            <p>A goldfish is a plant</p>
+                            <p>Cola is a drink</p>
                         </div>
                         <div class="col-6 tf-col">
                             <div class="tf-btn btn btn-outline-info" id="q9-t">
@@ -570,7 +570,7 @@
                 <div class="container-fluid question-container" id="q10" style="display: none;">
                     <div class="row tf-row">
                         <div class="col-12">
-                            <p>An eel is a plant</p>
+                            <p>Yoghurt is a drink</p>
                         </div>
                         <div class="col-6 tf-col">
                             <div class="tf-btn btn btn-outline-info" id="q10-t">
@@ -588,7 +588,7 @@
                 <div class="container-fluid question-container" id="q11" style="display: none;">
                     <div class="row tf-row">
                         <div class="col-12">
-                            <p>Sharks are plants</p>
+                            <p>Milk is a drink</p>
                         </div>
                         <div class="col-6 tf-col">
                             <div class="tf-btn btn btn-outline-info" id="q11-t">
@@ -606,7 +606,7 @@
                 <div class="container-fluid question-container" id="q12" style="display: none;">
                     <div class="row tf-row">
                         <div class="col-12">
-                            <p>Jellyfish are plants</p>
+                            <p>Soup is a drink</p>
                         </div>
                         <div class="col-6 tf-col">
                             <div class="tf-btn btn btn-outline-info" id="q12-t">
@@ -893,8 +893,8 @@
                     finalAnswers = q1Time + q2Time + q3Time + q4Time + q5Time + q6Time + q7Time + q8Time + q9Time + q10Time + q11Time + q12Time;
                     // finalFalse = q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
                     console.log(finalAnswers);
-                    avgTypical = (q1Time + q3Time + q5Time + q7Time) / 6;
-                    avgAtypical = (q2Time + q4Time + q6Time + q8Time) / 6;
+                    avgTypical = (q1Time + q3Time + q5Time + q7Time + q9Time + q11Time) / 6;
+                    avgAtypical = (q2Time + q4Time + q6Time + q8Time + q10Time + q12Time) / 6;
                     // avgFalse = (q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time) / 7;
                     // Comment out in production
                     // document.getElementById("typical-time").innerHTML = finalTypical;
@@ -910,7 +910,7 @@
                     document.getElementById("avg-atypical").value = avgAtypical;
                     // document.getElementById("avg-false").value = avgFalse;
                     document.getElementById("answers").style.display = "block";
-                    // sendForm();
+                    sendForm();
                     // document.getElementById("contact-form").style.display = "block";
                     return;
                 } else {
