@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Webpage</title>
+    <title>Think Fast! Plato Power!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -262,7 +262,7 @@
     <div id="test">
     <div class="container">
         <div class="row">
-            <form id="contact-form" style="display: none;">
+            <form id="contact-form" style="display: block;">
                 <!-- To simplify the tutorial, the value is static. -->
 
                 <label>Question 1 time</label>
@@ -305,16 +305,40 @@
                 <input id="q10-time" type="text" name="question10_time">
                 <label>Question 10 answer</label>
                 <input id="q10-answer" type="text" name="question10_ans">
+                <label>Question 11 time</label>
+                <input id="q11-time" type="text" name="question11_time">
+                <label>Question 11 answer</label>
+                <input id="q11-answer" type="text" name="question11_ans">
+                <label>Question 12 time</label>
+                <input id="q12-time" type="text" name="question12_time">
+                <label>Question 12 answer</label>
+                <input id="q12-answer" type="text" name="question12_ans">
+                <label>Question 13 time</label>
+                <input id="q13-time" type="text" name="question13_time">
+                <label>Question 13 answer</label>
+                <input id="q13-answer" type="text" name="question13_ans">
+                <label>Question 14 time</label>
+                <input id="q14-time" type="text" name="question14_time">
+                <label>Question 14 answer</label>
+                <input id="q14-answer" type="text" name="question14_ans">
+                <label>Question 15 time</label>
+                <input id="q15-time" type="text" name="question15_time">
+                <label>Question 15 answer</label>
+                <input id="q15-answer" type="text" name="question15_ans">
                 <label>Typical Time</label>
                 <input id="typical" type="text" name="typical_time">
                 <label>Atypical Time</label>
                 <input id="atypical" type="text" name="atypical_time">
+                <label>False Time</label>
+                <input id="false" type="text" name="false_time">
                 <label>Final Time</label>
                 <input id="final-time" type="text" name="final_time">
                 <label>average typical time</label>
                 <input id="avg-typical" type="text" name="avg_typical_time">
                 <label>average atypical time</label>
                 <input id="avg-atypical" type="text" name="avg_atypical_time">
+                <label>average false time</label>
+                <input id="avg-false" type="text" name="avg_false_time">
                 <label>Nickname</label>
                 <input type="text" name="signature" id="nickname">
 
@@ -528,7 +552,7 @@
                 <div class="container-fluid question-container" id="q9" style="display: none;">
                     <div class="row tf-row">
                         <div class="col-12">
-                            <p>Strips of chicken covered in batter and cooked are chicken tenders</p>
+                            <p>A goldfish is a plant</p>
                         </div>
                         <div class="col-6 tf-col">
                             <div class="tf-btn btn btn-outline-info" id="q9-t">
@@ -546,7 +570,7 @@
                 <div class="container-fluid question-container" id="q10" style="display: none;">
                     <div class="row tf-row">
                         <div class="col-12">
-                            <p>A person who tends to chickens is a chicken tender</p>
+                            <p>An eel is a plant</p>
                         </div>
                         <div class="col-6 tf-col">
                             <div class="tf-btn btn btn-outline-info" id="q10-t">
@@ -555,6 +579,96 @@
                         </div>
                         <div class="col-6 tf-col">
                             <div class="tf-btn btn btn-outline-danger" id="q10-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q11" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Sharks are plants</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q11-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q11-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q12" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Jellyfish are plants</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q12-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q12-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q13" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Sunflowers are fish</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q13-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q13-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q14" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Broccoli is a fish</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q14-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q14-f">
+                                <p>False</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid question-container" id="q15" style="display: none;">
+                    <div class="row tf-row">
+                        <div class="col-12">
+                            <p>Carrots are fish</p>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-info" id="q15-t">
+                                <p>True</p>
+                            </div>
+                        </div>
+                        <div class="col-6 tf-col">
+                            <div class="tf-btn btn btn-outline-danger" id="q15-f">
                                 <p>False</p>
                             </div>
                         </div>
@@ -598,64 +712,78 @@
         let q9False = document.getElementById("q9-f");
         let q10True = document.getElementById("q10-t");
         let q10False = document.getElementById("q10-f");
+        let q11True = document.getElementById("q11-t");
+        let q11False = document.getElementById("q11-f");
+        let q12True = document.getElementById("q12-t");
+        let q12False = document.getElementById("q12-f");
+        let q13True = document.getElementById("q13-t");
+        let q13False = document.getElementById("q13-f");
+        let q14True = document.getElementById("q14-t");
+        let q14False = document.getElementById("q14-f");
+        let q15True = document.getElementById("q15-t");
+        let q15False = document.getElementById("q15-f");
         let nicknameEntry = document.getElementById("nickname-entry").value;
 
 
         let qStart;
         let qEnd;
-
         let q1Time;
         let q1Ans;
-
         let q2Time;
         let q2Ans;
-
         let q3Time;
         let q3Ans;
-
         let q4Time;
         let q4Ans;
-
         let q5Time;
         let q5Ans;
-
         let q6Time;
         let q6Ans;
-
         let q7Time;
         let q7Ans;
-
         let q8Time;
         let q8Ans;
-
         let q9Time;
         let q9Ans;
-
         let q10Time;
         let q10Ans;
+        let q11Time;
+        let q11Ans;
+        let q12Time;
+        let q12Ans;
+        let q13Time;
+        let q13Ans;
+        let q14Time;
+        let q14Ans;
+        let q15Time;
+        let q15Ans;
 
         let nickname;
-        let typicalTimes = [q1Time, q3Time, q5Time, q7Time, q9Time];
-        let atypicalTimes = [q2Time, q4Time, q6Time, q8Time, q10Time];
+        let typicalTimes = [q1Time, q3Time, q5Time, q7Time];
+        let atypicalTimes = [q2Time, q4Time, q6Time, q8Time];
+        let falseTimes = [q9Time, q10Time, q11Time, q12Time, q13Time, q14Time, q15Time]
         let answers = [
-            q1Ans, q2Ans, q3Ans, q4Ans, q5Ans, q6Ans, q7Ans, q8Ans, q9Ans, q10Ans
+            q1Ans, q2Ans, q3Ans, q4Ans, q5Ans, q6Ans, q7Ans,
+            q8Ans, q9Ans, q10Ans, q11Ans, q12Ans, q13Ans, q14Ans, q15Ans
         ];
         let finalTypical;
         let finalAtypical;
+        let finalFalse;
         let finalAnswers;
         let avgTypical;
         let avgAtypical;
+        let avgFalse;
         // log questions taken here to avoid duplicates, once length if array is 8, conclude
         let dupeChecker = [];
         var lastQ = "";
 
         function roll() {
-            let diceRoll = Math.floor(Math.random() * 10) + 1;
+            let diceRoll = Math.floor(Math.random() * 15) + 1;
             return diceRoll;
         };
 
         function getRandomInt() {
-            if (dupeChecker.length > 9) {
+            if (dupeChecker.length > 14) {
                 d8 = 20;
                 return d8;
             } else {
@@ -731,10 +859,12 @@
                                     document.getElementById("finished").style.display = "block";
                                     document.getElementById("timer-control1").style.display = "none";
                                     document.getElementById("questions").style.display = "none";
-                                    finalTypical = q1Time + q3Time + q5Time + q7Time + q9Time;
-                                    finalAtypical = q2Time + q4Time + q6Time + q8Time + q10Time;
-                                    document.getElementById("typical-time").innerHTML = finalTypical;
-                                    document.getElementById("atypical-time").innerHTML = finalAtypical;
+                                    finalTypical = q1Time + q3Time + q5Time + q7Time;
+                                    finalAtypical = q2Time + q4Time + q6Time + q8Time;
+                                    finalAnswers = q1Time + q2Time + q3Time + q4Time + q5Time + q6Time + q7Time + q8Time + q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
+                                    finalFalse = q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
+                                    // document.getElementById("typical-time").innerHTML = finalTypical;
+                                    // document.getElementById("atypical-time").innerHTML = finalAtypical;
                                     document.getElementById("answers").style.display = "block";
                                     // sendForm();
                                     // document.getElementById("contact-form").style.display = "block";
@@ -757,25 +887,29 @@
                     document.getElementById("finished").style.display = "block";
                     document.getElementById("timer-control1").style.display = "none";
                     document.getElementById("questions").style.display = "none";
-                    finalTypical = q1Time + q3Time + q5Time + q7Time + q9Time;
-                    finalAtypical = q2Time + q4Time + q6Time + q8Time + q10Time;
-                    finalAnswers = q1Time + q3Time + q5Time + q7Time + q9Time + q2Time + q4Time + q6Time + q8Time + q10Time;
+                    finalTypical = q1Time + q3Time + q5Time + q7Time;
+                    finalAtypical = q2Time + q4Time + q6Time + q8Time;
+                    finalAnswers = q1Time + q2Time + q3Time + q4Time + q5Time + q6Time + q7Time + q8Time + q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
+                    finalFalse = q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
                     console.log(finalAnswers);
-                    avgTypical = (q1Time + q3Time + q5Time + q7Time + q9Time) / 5;
-                    avgAtypical = (q2Time + q4Time + q6Time + q8Time + q10Time) / 5;
+                    avgTypical = (q1Time + q3Time + q5Time + q7Time) / 4;
+                    avgAtypical = (q2Time + q4Time + q6Time + q8Time) / 4;
+                    avgFalse = (q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time) / 7;
                     // Comment out in production
-                    document.getElementById("typical-time").innerHTML = finalTypical;
-                    document.getElementById("atypical-time").innerHTML = finalAtypical;
+                    // document.getElementById("typical-time").innerHTML = finalTypical;
+                    // document.getElementById("atypical-time").innerHTML = finalAtypical;
                     // Comment out in production
                     document.getElementById("nicky-name").innerText = nickname;
                     document.getElementById("score").innerText = finalAnswers + " Seconds";
                     document.getElementById("final-time").value = finalAnswers;
                     document.getElementById("typical").value = finalTypical;
                     document.getElementById("atypical").value = finalAtypical;
+                    document.getElementById("false").value = finalFalse;
                     document.getElementById("avg-typical").value = avgTypical;
                     document.getElementById("avg-atypical").value = avgAtypical;
+                    document.getElementById("avg-false").value = avgFalse;
                     document.getElementById("answers").style.display = "block";
-                    // sendForm();
+                    sendForm();
                     // document.getElementById("contact-form").style.display = "block";
                     return;
                 } else {
@@ -880,6 +1014,51 @@
             genQuestion();
         };
 
+        function question11(answer) {
+            qEnd = Date.now();
+            q11Time = (qEnd - qStart) / 1000;
+            q11Ans = answer;
+            document.getElementById("q11-time").value = q11Time;
+            document.getElementById("q11-answer").value = q11Ans;
+            genQuestion();
+        };
+
+        function question12(answer) {
+            qEnd = Date.now();
+            q12Time = (qEnd - qStart) / 1000;
+            q12Ans = answer;
+            document.getElementById("q12-time").value = q12Time;
+            document.getElementById("q12-answer").value = q12Ans;
+            genQuestion();
+        };
+
+        function question13(answer) {
+            qEnd = Date.now();
+            q13Time = (qEnd - qStart) / 1000;
+            q13Ans = answer;
+            document.getElementById("q13-time").value = q13Time;
+            document.getElementById("q13-answer").value = q13Ans;
+            genQuestion();
+        };
+
+        function question14(answer) {
+            qEnd = Date.now();
+            q14Time = (qEnd - qStart) / 1000;
+            q14Ans = answer;
+            document.getElementById("q14-time").value = q14Time;
+            document.getElementById("q14-answer").value = q14Ans;
+            genQuestion();
+        };
+
+        function question15(answer) {
+            qEnd = Date.now();
+            q15Time = (qEnd - qStart) / 1000;
+            q15Ans = answer;
+            document.getElementById("q15-time").value = q15Time;
+            document.getElementById("q15-answer").value = q15Ans;
+            genQuestion();
+        };
+
 
         document.getElementById("exp-info").addEventListener('click', function () {
             document.getElementById("test-info").style.display = "block";
@@ -921,6 +1100,16 @@
         q9False.addEventListener('click', function () { question9("false") });
         q10True.addEventListener('click', function () { question10("true") });
         q10False.addEventListener('click', function () { question10("false") });
+        q11True.addEventListener('click', function () { question11("true") });
+        q11False.addEventListener('click', function () { question11("false") });
+        q12True.addEventListener('click', function () { question12("true") });
+        q12False.addEventListener('click', function () { question12("false") });
+        q13True.addEventListener('click', function () { question13("true") });
+        q13False.addEventListener('click', function () { question13("false") });
+        q14True.addEventListener('click', function () { question14("true") });
+        q14False.addEventListener('click', function () { question14("false") });
+        q15True.addEventListener('click', function () { question15("true") });
+        q15False.addEventListener('click', function () { question15("false") });
     </script>
 
 </body>
