@@ -26,7 +26,7 @@
         * {
             font-size: 1.1rem;
         }
-        
+
         #body {
             background-image: url('https://res.cloudinary.com/dmjetjfza/image/upload/v1758990493/think-fast-bg_nk3j1f.webp');
             background-size: auto 100%;
@@ -53,7 +53,7 @@
             --bs-gutter-x: 0rem;
         }
 
-        
+
 
         .box {
             padding: 5% 10%;
@@ -313,7 +313,7 @@
                 <input id="q12-time" type="text" name="question12_time">
                 <label>Question 12 answer</label>
                 <input id="q12-answer" type="text" name="question12_ans">
-                <label>Question 13 time</label>
+                <!-- <label>Question 13 time</label>
                 <input id="q13-time" type="text" name="question13_time">
                 <label>Question 13 answer</label>
                 <input id="q13-answer" type="text" name="question13_ans">
@@ -324,21 +324,21 @@
                 <label>Question 15 time</label>
                 <input id="q15-time" type="text" name="question15_time">
                 <label>Question 15 answer</label>
-                <input id="q15-answer" type="text" name="question15_ans">
+                <input id="q15-answer" type="text" name="question15_ans"> -->
                 <label>Typical Time</label>
                 <input id="typical" type="text" name="typical_time">
                 <label>Atypical Time</label>
                 <input id="atypical" type="text" name="atypical_time">
-                <label>False Time</label>
-                <input id="false" type="text" name="false_time">
+                <!-- <label>False Time</label>
+                <input id="false" type="text" name="false_time"> -->
                 <label>Final Time</label>
                 <input id="final-time" type="text" name="final_time">
                 <label>average typical time</label>
                 <input id="avg-typical" type="text" name="avg_typical_time">
                 <label>average atypical time</label>
                 <input id="avg-atypical" type="text" name="avg_atypical_time">
-                <label>average false time</label>
-                <input id="avg-false" type="text" name="avg_false_time">
+                <!-- <label>average false time</label> -->
+                <!-- <input id="avg-false" type="text" name="avg_false_time"> -->
                 <label>Nickname</label>
                 <input type="text" name="signature" id="nickname">
 
@@ -687,7 +687,7 @@
                 document.getElementById("intro").style.animation = "fade-in 1s ease-in-out"
             }, 1000)
 
-        
+
     </script>
     <!-- Javascript -->
     <script type="text/javascript">
@@ -751,40 +751,41 @@
         let q11Ans;
         let q12Time;
         let q12Ans;
-        let q13Time;
-        let q13Ans;
-        let q14Time;
+        let q13Time = 0;
+        let q13Ans0;
+        let q14Time = 0;
         let q14Ans;
-        let q15Time;
+        let q15Time = 0;
         let q15Ans;
 
         let nickname;
-        let typicalTimes = [q1Time, q3Time, q5Time, q7Time];
-        let atypicalTimes = [q2Time, q4Time, q6Time, q8Time];
-        let falseTimes = [q9Time, q10Time, q11Time, q12Time, q13Time, q14Time, q15Time]
+        let typicalTimes = [q1Time, q3Time, q5Time, q7Time, q9Time, q11Time];
+        let atypicalTimes = [q2Time, q4Time, q6Time, q8Time, q10Time, q12Time];
+        // let falseTimes = [q9Time, q10Time, q11Time, q12Time, q13Time, q14Time, q15Time]
         let answers = [
             q1Ans, q2Ans, q3Ans, q4Ans, q5Ans, q6Ans, q7Ans,
-            q8Ans, q9Ans, q10Ans, q11Ans, q12Ans, q13Ans, q14Ans, q15Ans
+            q8Ans, q9Ans, q10Ans, q11Ans, q12Ans,
         ];
         let finalTypical;
         let finalAtypical;
-        let finalFalse;
+        // let finalFalse;
         let finalAnswers;
         let avgTypical;
         let avgAtypical;
-        let avgFalse;
+        // let avgFalse;
         // log questions taken here to avoid duplicates, once length if array is 8, conclude
         let dupeChecker = [];
         var lastQ = "";
 
         function roll() {
-            let diceRoll = Math.floor(Math.random() * 15) + 1;
+            let diceRoll = Math.floor(Math.random() * 12) + 1;
             return diceRoll;
         };
 
         function getRandomInt() {
-            if (dupeChecker.length > 14) {
+            if (dupeChecker.length > 11) {
                 d8 = 20;
+                console.log("numbers rolled this session: ", dupeChecker);
                 return d8;
             } else {
                 if (dupeChecker.length < 1) {
@@ -833,7 +834,7 @@
                         console.log('FAILED...', error);
                     });
         };
-        
+
         function genQuestion() {
             console.log("CLICK");
             if (dupeChecker.length < 1) {
@@ -862,7 +863,7 @@
                                     finalTypical = q1Time + q3Time + q5Time + q7Time;
                                     finalAtypical = q2Time + q4Time + q6Time + q8Time;
                                     finalAnswers = q1Time + q2Time + q3Time + q4Time + q5Time + q6Time + q7Time + q8Time + q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
-                                    finalFalse = q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
+                                    // finalFalse = q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
                                     // document.getElementById("typical-time").innerHTML = finalTypical;
                                     // document.getElementById("atypical-time").innerHTML = finalAtypical;
                                     document.getElementById("answers").style.display = "block";
@@ -887,14 +888,14 @@
                     document.getElementById("finished").style.display = "block";
                     document.getElementById("timer-control1").style.display = "none";
                     document.getElementById("questions").style.display = "none";
-                    finalTypical = q1Time + q3Time + q5Time + q7Time;
-                    finalAtypical = q2Time + q4Time + q6Time + q8Time;
-                    finalAnswers = q1Time + q2Time + q3Time + q4Time + q5Time + q6Time + q7Time + q8Time + q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
-                    finalFalse = q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
+                    finalTypical = q1Time + q3Time + q5Time + q7Time + q9Time + q11Time;
+                    finalAtypical = q2Time + q4Time + q6Time + q8Time + q10Time + q12Time;
+                    finalAnswers = q1Time + q2Time + q3Time + q4Time + q5Time + q6Time + q7Time + q8Time + q9Time + q10Time + q11Time + q12Time;
+                    // finalFalse = q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time;
                     console.log(finalAnswers);
-                    avgTypical = (q1Time + q3Time + q5Time + q7Time) / 4;
-                    avgAtypical = (q2Time + q4Time + q6Time + q8Time) / 4;
-                    avgFalse = (q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time) / 7;
+                    avgTypical = (q1Time + q3Time + q5Time + q7Time) / 6;
+                    avgAtypical = (q2Time + q4Time + q6Time + q8Time) / 6;
+                    // avgFalse = (q9Time + q10Time + q11Time + q12Time + q13Time + q14Time + q15Time) / 7;
                     // Comment out in production
                     // document.getElementById("typical-time").innerHTML = finalTypical;
                     // document.getElementById("atypical-time").innerHTML = finalAtypical;
@@ -904,12 +905,12 @@
                     document.getElementById("final-time").value = finalAnswers;
                     document.getElementById("typical").value = finalTypical;
                     document.getElementById("atypical").value = finalAtypical;
-                    document.getElementById("false").value = finalFalse;
+                    // document.getElementById("false").value = finalFalse;
                     document.getElementById("avg-typical").value = avgTypical;
                     document.getElementById("avg-atypical").value = avgAtypical;
-                    document.getElementById("avg-false").value = avgFalse;
+                    // document.getElementById("avg-false").value = avgFalse;
                     document.getElementById("answers").style.display = "block";
-                    sendForm();
+                    // sendForm();
                     // document.getElementById("contact-form").style.display = "block";
                     return;
                 } else {
@@ -921,7 +922,7 @@
                     qStart = Date.now();
                 }
             }
-            
+
         };
 
         function question1(answer) {
